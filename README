@@ -9,6 +9,7 @@ Typescript:
 React-Exam:
   Task 1: Fix all the errors.
   Task 2: Improve the code by refactoring it.
+  Note: The shapes should change color when hovered and the color is decided either by the perimeter or by the color chosen in the input. Other than that you can change the code as you want.
 
 
 Note: You need to push your code on github. If there is any problem with pushing permissions you can always email me
