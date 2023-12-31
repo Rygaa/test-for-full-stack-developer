@@ -75,7 +75,9 @@ describe("findAllPairs", () => {
 
 describe("longestConsecutiveSequence", () => {
   test("finds the longest consecutive sequence", () => {
-    expect(longestConsecutiveSequence([100, 4, 200, 1, 3, 2])).toBe(4);
+    expect(longestConsecutiveSequence([101, 100, 4, 200, 201, 1, 3, 2])).toBe(
+      4
+    );
   });
 
   test("returns 0 for empty array", () => {

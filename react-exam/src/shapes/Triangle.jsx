@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import randomColor from "randomcolor";
+import { getColorByPerimeter } from "../helper";
+import InputElement from "../components/InputElement";
 
 const Triangle = ({ sideLength }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -8,22 +9,11 @@ const Triangle = ({ sideLength }) => {
     return 3 * sideLength;
   };
 
-  const getColorByPerimeter = (perimeter) => {
-    if (perimeter <= 300) return "lightblue";
-    if (perimeter <= 350) return "blue";
-    if (perimeter <= 750) return "red";
-    return "darkblue";
-  };
-
   const perimeter = calculatePerimeter();
   const [color, setColor] = React.useState(getColorByPerimeter(perimeter));
 
-  React.useEffect(() => {
-    setColor(randomColor())
-  }, [color])
-
   return (
-    <div>
+    <article>
       <div
         style={{
           width: "0",
@@ -36,8 +26,13 @@ const Triangle = ({ sideLength }) => {
         onMouseLeave={() => setIsHovered(false)}
       />
       <p>Perimeter: {calculatePerimeter()} px</p>
-      <input onChange={(event) => setColor(event.target.value)} />
-    </div>
+      <InputElement
+        name={"Triangle color"}
+        type='text'
+        setColor={setColor}
+        perimeter={perimeter}
+      />
+    </article>
   );
 };
 
